@@ -13,8 +13,20 @@ port = int(os.environ.get("PORT", 5000))
 
 #ini
 contador = multiprocessing.Value('i', 0)
+def incrementar_contador():
+    global contador
+    while True:
+        with contador.get_lock():
+            contador.value += 10
+        time.sleep(10)
+thread = Thread(target=incrementar_contador)
 #end
 
+@app.route('/mostrar_num')
+def obtener_contador():
+    with contador.get_lock():
+        return jsonify({'contador': contador.value})
+        
 @app.route('/add/<username>')
 def add_user(username):
     return "<p>Hello, " + username + ", me llamou jseeu!</p>"
