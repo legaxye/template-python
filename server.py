@@ -22,8 +22,8 @@ scraper = cloudscraper.create_scraper()
 # Configurar la conexión a MySQL
 db_config = {
     "host": "aws.connect.psdb.cloud",
-    "user": "ecybeufvy52y5x3tj09g",
-    "password": "pscale_pw_rZ6NCoYZFbmLK4Yp9vlG8tC4zCpRkwUxvuvTMpajloK",
+    "user": "idnort60oeowfqj31h56",
+    "password": "pscale_pw_KNdRmOB1rOul9jnIKl7Di9KulI79hhUYtLdYZ3QYbY4",
     "database": "clanwarxye"
 }
 
