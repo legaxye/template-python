@@ -13,7 +13,7 @@ def serve_static(path):
 
 @app.route('/')
 def home():
-   return render_template('index.html')
+   return "<p>Hello, World, me llamou jusss!</p>"
 
 @app.route('/<path:path>')
 def all_routes(path):
