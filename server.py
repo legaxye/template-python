@@ -22,10 +22,11 @@ scraper = cloudscraper.create_scraper()
 # Configurar la conexión a MySQL
 db_config = {
     "host": "aws.connect.psdb.cloud",
-    "user": "6t89a13srssrm7gmv138",
-    "password": "pscale_pw_sxEC9dRo9BnKgvRZGIkp2HxpS005bWYs5giDE8FyOqw",
+    "user": "h2vv32vi9ys4q5ng68ej",
+    "password": "pscale_pw_LfdWgDZPn2RfBzxP653ngJdowhaJaatgdpDjVGJdynK",
     "database": "clanwarxye"
 }
+
 # Crear la conexión a MySQL
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
@@ -91,7 +92,7 @@ def incrementar_contador():
     global contador
     while True:
         update_data()
-        time.sleep(1)  # Incrementar el contador cada 10 segundos
+        time.sleep(10)  # Incrementar el contador cada 10 segundos
 
 thread = Thread(target=incrementar_contador)
 thread.start()  # Iniciar el hilo para incrementar el contador
