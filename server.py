@@ -2,12 +2,30 @@ import os
 from flask import Flask, send_from_directory, render_template, redirect, jsonify
 from threading import Thread
 import time
+#ini
+import sys
+from bs4 import BeautifulSoup
+import cloudscraper
+import mysql.connector
+#end
 
 app = Flask(__name__)
 
 port = int(os.environ.get("PORT", 5000))
 
 contador = 0
+#ini
+# Crear el scraper
+scraper = cloudscraper.create_scraper()
+
+# Configurar la conexión a MySQL
+db_config = {
+    "host": "aws.connect.psdb.cloud",
+    "user": "6t89a13srssrm7gmv138",
+    "password": "pscale_pw_sxEC9dRo9BnKgvRZGIkp2HxpS005bWYs5giDE8FyOqw",
+    "database": "clanwarxye"
+}
+#end
 
 def incrementar_contador():
     global contador
